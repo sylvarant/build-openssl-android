@@ -11,6 +11,8 @@ tar -xvzf $OPENSSL_FULL_VERSION.tar.gz
 
 (cd $OPENSSL_FULL_VERSION;
 
+sed -e s/-mandroid//g -i configdata.pm Configurations/10-main.conf
+
  if [ ! ${MINIMUM_ANDROID_SDK_VERSION} ]; then
      echo "MINIMUM_ANDROID_SDK_VERSION was not provided, include and rerun"
      exit 1
